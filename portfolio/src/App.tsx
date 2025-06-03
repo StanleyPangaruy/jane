@@ -186,16 +186,16 @@ const Portfolio: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="jane" className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+      <section id="jane" className="min-h-screen flex items-center justify-center px-6 pt-20 md:pt-0 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-green-500/5"></div>
         
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <div className="relative mb-12">
-            <div className="w-56 h-56 mx-auto rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-2xl flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-emerald-300 to-green-400 flex items-center justify-center">
+        <div className="max-w-6xl mx-auto text-center relative z-10 py-8">
+          <div className="relative mb-8 md:mb-12">
+            <div className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 shadow-2xl flex items-center justify-center relative overflow-hidden p-2">
+              <div className="absolute inset-2 rounded-full overflow-hidden">
                   <img 
                     src="/pfp.jpg" 
-                    alt="Sarah's Profile" 
+                    alt="Jane's Profile" 
                     className="w-full h-full object-cover rounded-full"
                     onError={(e) => {
                       // Fallback to user icon if image doesn't load
@@ -205,14 +205,16 @@ const Portfolio: React.FC = () => {
                       }
                     }}
                   />
-                <User size={100} className="text-white" />
+                  <div className="w-full h-full bg-gradient-to-br from-emerald-300 to-green-400 rounded-full flex items-center justify-center" style={{display: 'none'}}>
+                  <User size={100} className="text-white" />
+                  </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+              <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                 <Star className="text-white" size={24} />
               </div>
             </div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-8 py-3 rounded-full shadow-xl border-2 border-emerald-200">
-              <span className="text-emerald-600 font-bold text-sm">🚀 Ready for Opportunities</span>
+            <div className="absolute -bottom-4 md:-bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-6 md:px-8 py-2 md:py-3 rounded-full shadow-xl border-2 border-emerald-200">
+              <span className="text-emerald-600 font-bold text-xs md:text-sm">🚀 Ready for Opportunities</span>
             </div>
           </div>
           
