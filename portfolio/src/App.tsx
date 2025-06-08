@@ -91,6 +91,19 @@ const Portfolio: React.FC = () => {
   ];
 
   const experience: Experience[] = [
+        {
+      title: "Part-Time Accounting Assistant",
+      company: "KSF Accounting and Tax Consultancy",
+      location: "SJDM, Bulacan",
+      period: "April 2025 - Present",
+      description: [
+        "Preparation of books of accounts.",
+        "Filing of eBIR forms.",
+        "Preparation of summary of sales and purchases.",
+        // "Data Entry",
+      ],
+      icon: <BookOpen className="text-emerald-600" size={24} />
+    },
     {
       title: "SK Kagawad",
       company: "Sangguniang Kabataan",
@@ -108,12 +121,14 @@ const Portfolio: React.FC = () => {
       location: "Lucena City, Quezon",
       period: "Sept 2024 - Dec 2024",
       description: [
-        "Completed 400 hours of hands-on training focused on financial statement preparation, trial balance adjustments, tax compliance (eBIR forms, alphalist validation, donor's tax computation), and corporate documentation.",
-        "Assisted in managing and auditing large datasets and financial documents, enhancing accuracy and attention to detail in professional workflows.",
-        "Strengthened Excel proficiency (including pivot tables), analytical thinking, independence, and problem-solving skills in a real-world accounting environment.",
+        "Prepared trial balances (Unadjusted to adjusted) of CDJ, CRJ and GJ for multiple schools from years 2019 to 2024.",
+        "Prepated financial statements.",
+        "Filed eBIR forms (Alphalist Data Entry and Validation for tax compliance.)",
+        "Reviewed and checked sales invoice, encoded and summarized data.",
+        "Assisted in handling large datasets, audited financial statements, and corporate notarial documents."
       ],
       icon: <BookOpen className="text-emerald-600" size={24} />
-    }
+    },
   ];
 
   const education: Education[] = [
@@ -126,12 +141,12 @@ const Portfolio: React.FC = () => {
   ];
 
   const skills: Skill[] = [
-    { name: "Financial Accounting", level: 95, icon: <DollarSign size={20} /> },
-    { name: "Management Accounting", level: 90, icon: <BarChart3 size={20} /> },
-    { name: "Tax Preparation", level: 85, icon: <Calculator size={20} /> },
-    { name: "Auditing", level: 80, icon: <FileText size={20} /> },
-    { name: "Excel & VBA", level: 92, icon: <TrendingUp size={20} /> },
-    { name: "QuickBooks Pro", level: 88, icon: <PieChart size={20} /> }
+    { name: "Financial Accounting", level: 75, icon: <DollarSign size={20} /> },
+    { name: "Management Accounting", level: 75, icon: <BarChart3 size={20} /> },
+    { name: "Tax Preparation", level: 75, icon: <Calculator size={20} /> },
+    { name: "Auditing", level: 75, icon: <FileText size={20} /> },
+    { name: "Excel & VBA", level: 75, icon: <TrendingUp size={20} /> },
+    { name: "QuickBooks Pro", level: 75, icon: <PieChart size={20} /> }
   ];
 
   const certifications = [
@@ -166,7 +181,7 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
             <div className="hidden md:flex space-x-8">
-              {['jane', 'about', 'experience', 'projects', 'contact'].map((section) => (
+              {['jane', 'about', 'experience', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -222,15 +237,15 @@ const Portfolio: React.FC = () => {
             Hello, I'm <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 bg-clip-text text-transparent">Jane</span>
           </h1>
           <div className="text-2xl md:text-3xl text-gray-700 mb-4 font-semibold">
-            Future <span className="text-emerald-600">Certified Public Accountant</span>
+            Aspiring <span className="text-emerald-600">Certified Public Accountant</span>
           </div>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+          {/* <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Passionate accounting student specializing in financial analysis, tax optimization, 
             and business intelligence. Transforming numbers into strategic insights that drive success.
-          </p>
+          </p> */}
           
           {/* Animated Stats */}
-          <div className="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
+          {/* <div className="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-emerald-100">
               <div className="text-3xl font-black text-emerald-600">{animatedStats.gpa.toFixed(1)}</div>
               <div className="text-sm text-gray-600 font-semibold">GPA</div>
@@ -243,17 +258,17 @@ const Portfolio: React.FC = () => {
               <div className="text-3xl font-black text-emerald-600">{animatedStats.experience}+</div>
               <div className="text-sm text-gray-600 font-semibold">Years Experience</div>
             </div>
-          </div>
+          </div> */}
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button 
+            {/* <button 
               onClick={() => scrollToSection('projects')}
               className="group bg-gradient-to-r from-emerald-600 to-green-600 text-white px-10 py-5 rounded-2xl font-bold hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-2xl hover:shadow-emerald-500/25 transform hover:-translate-y-2 flex items-center justify-center gap-3"
             >
               <Zap size={24} />
               View My Work
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </button> */}
             <button className="group border-3 border-emerald-600 text-emerald-600 px-10 py-5 rounded-2xl font-bold hover:bg-emerald-600 hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 flex items-center justify-center gap-3">
               <Download size={24} />
               Download Resume
@@ -394,15 +409,15 @@ const Portfolio: React.FC = () => {
                       <p className="text-emerald-100 text-lg font-medium">{edu.school}</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-4">
                     <div className="bg-white/10 rounded-2xl p-4 text-center">
                       <div className="text-2xl font-bold">{edu.period}</div>
                       <div className="text-emerald-100 text-sm">Period</div>
                     </div>
-                    <div className="bg-white/10 rounded-2xl p-4 text-center">
+                    {/* <div className="bg-white/10 rounded-2xl p-4 text-center">
                       <div className="text-2xl font-bold">{edu.gpa}/4.0</div>
                       <div className="text-emerald-100 text-sm">GPA</div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}
@@ -411,7 +426,7 @@ const Portfolio: React.FC = () => {
               <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-emerald-100">
                 <h4 className="text-xl font-bold text-emerald-600 mb-6">Key Coursework</h4>
                 <div className="grid grid-cols-2 gap-3 text-sm">
-                  {['Advanced Financial Accounting', 'Cost Accounting', 'Auditing Theory', 'Taxation', 'Financial Analysis', 'Business Law', 'Information Systems', 'Ethics in Accounting'].map((course, i) => (
+                  {['Financial Accounting and Reporting', 'Advanced Financial Accounting and Reporting', 'Auditing and Assurance Principles', 'Auditing and Assurance Practices', 'Management Services', 'Regulatory Framework for Business Transactions', 'Taxation', 'Accounting Information Systems', 'Economics'].map((course, i) => (
                     <div key={i} className="bg-emerald-50 p-3 rounded-xl text-gray-700 font-medium">
                       {course}
                     </div>
@@ -424,7 +439,7 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6">
+      {/* <section id="projects" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-black text-gray-800 mb-6">Featured Projects</h2>
@@ -468,7 +483,7 @@ const Portfolio: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-24 px-6 bg-gradient-to-br from-emerald-600 via-green-700 to-teal-800 relative overflow-hidden">
