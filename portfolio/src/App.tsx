@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Download, User, BookOpen, Award, Briefcase, ExternalLink, Linkedin, Calculator, TrendingUp, PieChart, BarChart3, DollarSign, FileText, Target, Zap, Star, ChevronRight, PhilippinePeso } from 'lucide-react';
+import { Mail, Phone, MapPin, Download, User, BookOpen, Award, Briefcase, Linkedin, Calculator, TrendingUp, PieChart, BarChart3, DollarSign, FileText, Target, Star, PhilippinePeso } from 'lucide-react';
 
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-  icon: React.ReactNode;
-  gradient: string;
-}
+// interface Project {
+//   title: string;
+//   description: string;
+//   technologies: string[];
+//   link?: string;
+//   icon: React.ReactNode;
+//   gradient: string;
+// }
 
 interface Experience {
   title: string;
@@ -35,7 +35,7 @@ interface Skill {
 const Portfolio: React.FC = () => {
   const [activeSection, setActiveSection] = useState('jane');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [animatedStats, setAnimatedStats] = useState({ gpa: 0, projects: 0, experience: 0 });
+  // const [animatedStats, setAnimatedStats] = useState({ gpa: 0, projects: 0, experience: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +45,13 @@ const Portfolio: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Animate stats
-    const timer = setTimeout(() => {
-      setAnimatedStats({ gpa: 3.8, projects: 8, experience: 2 });
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Animate stats
+  //   const timer = setTimeout(() => {
+  //     setAnimatedStats({ gpa: 3.8, projects: 8, experience: 2 });
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -59,36 +59,36 @@ const Portfolio: React.FC = () => {
     setActiveSection(sectionId);
   };
 
-  const projects: Project[] = [
-    {
-      title: "Financial Analysis Dashboard",
-      description: "Interactive Excel dashboard with advanced pivot tables, financial ratios, and automated variance analysis for quarterly reporting.",
-      technologies: ["Advanced Excel", "Power BI", "Financial Modeling", "VBA"],
-      icon: <BarChart3 size={32} className="text-white" />,
-      gradient: "from-emerald-500 to-teal-600"
-    },
-    {
-      title: "Tax Optimization Calculator",
-      description: "Comprehensive tax planning tool with depreciation schedules, deduction optimization, and multi-scenario analysis.",
-      technologies: ["Tax Software", "Excel VBA", "Regulatory Compliance"],
-      icon: <Calculator size={32} className="text-white" />,
-      gradient: "from-green-500 to-emerald-600"
-    },
-    {
-      title: "Budget Forecasting Model",
-      description: "Dynamic budgeting system with rolling forecasts, variance analysis, and automated reporting for small businesses.",
-      technologies: ["Financial Planning", "Forecasting", "Data Analysis"],
-      icon: <TrendingUp size={32} className="text-white" />,
-      gradient: "from-teal-500 to-green-600"
-    },
-    {
-      title: "Audit Trail System",
-      description: "Comprehensive audit documentation system with internal controls testing and compliance tracking.",
-      technologies: ["Audit Procedures", "Internal Controls", "Documentation"],
-      icon: <FileText size={32} className="text-white" />,
-      gradient: "from-emerald-600 to-green-700"
-    }
-  ];
+  // const projects: Project[] = [
+  //   {
+  //     title: "Financial Analysis Dashboard",
+  //     description: "Interactive Excel dashboard with advanced pivot tables, financial ratios, and automated variance analysis for quarterly reporting.",
+  //     technologies: ["Advanced Excel", "Power BI", "Financial Modeling", "VBA"],
+  //     icon: <BarChart3 size={32} className="text-white" />,
+  //     gradient: "from-emerald-500 to-teal-600"
+  //   },
+  //   {
+  //     title: "Tax Optimization Calculator",
+  //     description: "Comprehensive tax planning tool with depreciation schedules, deduction optimization, and multi-scenario analysis.",
+  //     technologies: ["Tax Software", "Excel VBA", "Regulatory Compliance"],
+  //     icon: <Calculator size={32} className="text-white" />,
+  //     gradient: "from-green-500 to-emerald-600"
+  //   },
+  //   {
+  //     title: "Budget Forecasting Model",
+  //     description: "Dynamic budgeting system with rolling forecasts, variance analysis, and automated reporting for small businesses.",
+  //     technologies: ["Financial Planning", "Forecasting", "Data Analysis"],
+  //     icon: <TrendingUp size={32} className="text-white" />,
+  //     gradient: "from-teal-500 to-green-600"
+  //   },
+  //   {
+  //     title: "Audit Trail System",
+  //     description: "Comprehensive audit documentation system with internal controls testing and compliance tracking.",
+  //     technologies: ["Audit Procedures", "Internal Controls", "Documentation"],
+  //     icon: <FileText size={32} className="text-white" />,
+  //     gradient: "from-emerald-600 to-green-700"
+  //   }
+  // ];
 
   const experience: Experience[] = [
         {
